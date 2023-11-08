@@ -21,16 +21,20 @@ function Navbar(ducks){
         const duckimg = document.createElement('img')
         duckimg.setAttribute('src',duck.img_url)
         nav.appendChild(duckimg)
-        duckimg.addEventListener('click', () => {updateDuckPage(duck)})
+        duckimg.addEventListener('click', () => {
+            updateDuckPage(duck)
+        })
         //When selecting image show duck name,mage, and like buttons
         //Name image and like already exist
     });
 }
+
 function updateDuckPage(duck){
     DuckName.textContent = duck.name
     imagetofill.setAttribute('src',duck.img_url)
     let likecounter = duck.likes
     DuckLikes.textContent = likecounter + " Likes"
+    
     DuckLikes.addEventListener('click', () => {
         //Add a patch
         likecounter += 1
